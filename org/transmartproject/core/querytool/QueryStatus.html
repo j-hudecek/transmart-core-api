@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="en"><head><title>org/transmartproject/core/querytool/QueryStatus</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../"><meta name="groc-document-path" content="org/transmartproject/core/querytool/QueryStatus"><meta name="groc-project-path" content="src/main/groovy/org/transmartproject/core/querytool/QueryStatus.groovy"><meta name="groc-github-url" content="https://github.com/thehyve/transmart-core-api"><link rel="stylesheet" type="text/css" media="all" href="../../../../assets/style.css"><script type="text/javascript" src="../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/thehyve/transmart-core-api/blob/master/src/main/groovy/org/transmartproject/core/querytool/QueryStatus.groovy">src/main/groovy/org/transmartproject/core/querytool/QueryStatus.groovy</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">transmartproject</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">querytool</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * An enumeration for query statuses. This is a static version of a subset of</span>
+<span class="cm"> * i2b2&#39;s qt_query_status_type table.</span>
+<span class="cm"> */</span>
+<span class="kd">enum</span> <span class="n">QueryStatus</span> <span class="o">{</span>
+    <span class="n">PROCESSING</span>  <span class="o">(</span><span class="mi">2</span><span class="o">),</span>
+    <span class="n">FINISHED</span>    <span class="o">(</span><span class="mi">3</span><span class="o">),</span>
+    <span class="n">ERROR</span>       <span class="o">(</span><span class="mi">4</span><span class="o">),</span>
+    <span class="n">COMPLETED</span>   <span class="o">(</span><span class="mi">6</span><span class="o">);</span>
+
+    <span class="kd">final</span> <span class="kt">int</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="kd">protected</span> <span class="nf">QueryStatus</span><span class="o">(</span><span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="n">QueryStatus</span> <span class="nf">forId</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">values</span><span class="o">().</span><span class="na">find</span> <span class="o">{</span> <span class="n">it</span><span class="o">.</span><span class="na">id</span> <span class="o">==</span> <span class="n">id</span> <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></div></div></div></div></body></html>

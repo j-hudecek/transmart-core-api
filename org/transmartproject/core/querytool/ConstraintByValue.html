@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en"><head><title>org/transmartproject/core/querytool/ConstraintByValue</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../"><meta name="groc-document-path" content="org/transmartproject/core/querytool/ConstraintByValue"><meta name="groc-project-path" content="src/main/groovy/org/transmartproject/core/querytool/ConstraintByValue.groovy"><meta name="groc-github-url" content="https://github.com/thehyve/transmart-core-api"><link rel="stylesheet" type="text/css" media="all" href="../../../../assets/style.css"><script type="text/javascript" src="../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/thehyve/transmart-core-api/blob/master/src/main/groovy/org/transmartproject/core/querytool/ConstraintByValue.groovy">src/main/groovy/org/transmartproject/core/querytool/ConstraintByValue.groovy</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">transmartproject</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">querytool</span>
+
+<span class="kn">import</span> <span class="nn">groovy.transform.Immutable</span>
+
+<span class="nd">@Immutable</span>
+<span class="kd">class</span> <span class="nc">ConstraintByValue</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The operator that will be used to compare the value with the constraint.</span>
+<span class="cm">     */</span>
+    <span class="n">Operator</span> <span class="n">operator</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The second operand in the constraint.</span>
+<span class="cm">     */</span>
+    <span class="n">String</span> <span class="n">constraint</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The type of constraint. Indicates whether constraint is a number or a</span>
+<span class="cm">     * flag like &#39;H&#39; (high).</span>
+<span class="cm">     */</span>
+    <span class="n">ValueType</span> <span class="n">valueType</span>
+
+
+    <span class="kd">enum</span> <span class="n">Operator</span> <span class="o">{</span>
+
+        <span class="n">LOWER_THAN</span>          <span class="o">(</span><span class="err">&#39;</span><span class="n">LT</span><span class="err">&#39;</span><span class="o">),</span>
+        <span class="n">LOWER_OR_EQUAL_TO</span>   <span class="o">(</span><span class="err">&#39;</span><span class="n">LE</span><span class="err">&#39;</span><span class="o">),</span>
+        <span class="n">EQUAL_TO</span>            <span class="o">(</span><span class="err">&#39;</span><span class="n">EQ</span><span class="err">&#39;</span><span class="o">),</span>
+        <span class="n">BETWEEN</span>             <span class="o">(</span><span class="err">&#39;</span><span class="n">BETWEEN</span><span class="err">&#39;</span><span class="o">),</span>
+        <span class="n">GREATER_THAN</span>        <span class="o">(</span><span class="err">&#39;</span><span class="n">GT</span><span class="err">&#39;</span><span class="o">),</span>
+        <span class="n">GREATER_OR_EQUAL_TO</span> <span class="o">(</span><span class="err">&#39;</span><span class="n">GE</span><span class="err">&#39;</span><span class="o">);</span>
+
+        <span class="kd">final</span> <span class="n">String</span> <span class="n">value</span>
+
+        <span class="kd">protected</span> <span class="nf">Operator</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="o">}</span>
+
+        <span class="kd">static</span> <span class="n">Operator</span> <span class="nf">forValue</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">values</span><span class="o">().</span><span class="na">find</span> <span class="o">{</span> <span class="n">value</span> <span class="o">==</span> <span class="n">it</span><span class="o">.</span><span class="na">value</span> <span class="o">}</span> <span class="o">?:</span>
+                <span class="o">{</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="o">(</span><span class="s">&quot;No operator for value $value&quot;</span><span class="o">)</span> <span class="o">}()</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">enum</span> <span class="n">ValueType</span> <span class="o">{</span>
+        <span class="n">NUMBER</span><span class="o">,</span>
+        <span class="n">FLAG</span>
+    <span class="o">}</span>
+
+<span class="o">}</span></div></div></div></div></body></html>
