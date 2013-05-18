@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="en"><head><title>src/main/groovy/org/transmartproject/core/dataquery/assay/Assay</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../../../../../"><meta name="groc-document-path" content="src/main/groovy/org/transmartproject/core/dataquery/assay/Assay"><meta name="groc-project-path" content="src/main/groovy/org/transmartproject/core/dataquery/assay/Assay.groovy"><meta name="groc-github-url" content="https://github.com/thehyve/transmart-core-api"><link rel="stylesheet" type="text/css" media="all" href="../../../../../../../../assets/style.css"><script type="text/javascript" src="../../../../../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/thehyve/transmart-core-api/blob/master/src/main/groovy/org/transmartproject/core/dataquery/assay/Assay.groovy">src/main/groovy/org/transmartproject/core/dataquery/assay/Assay.groovy</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">transmartproject</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">dataquery</span><span class="o">.</span><span class="na">assay</span>
+
+<span class="kn">import</span> <span class="nn">org.transmartproject.core.dataquery.Patient</span>
+<span class="kn">import</span> <span class="nn">org.transmartproject.core.dataquery.Platform</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * An assay (used somewhat interchangeably with the term &quot;sample&quot; for tranSMART</span>
+<span class="cm"> * purposes) is any biological tissue used in an analysis for generating</span>
+<span class="cm"> * high-dimensional data. An assay is linked to a specific patient and to a</span>
+<span class="cm"> * specific platform.</span>
+<span class="cm"> */</span>
+<span class="kd">interface</span> <span class="nc">Assay</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * A numeric identifier for this assay.</span>
+<span class="cm">     */</span>
+    <span class="n">Long</span> <span class="nf">getId</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The patient from whom a sample was extracted for this assay.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the patient for this assay; never null</span>
+<span class="cm">     */</span>
+    <span class="n">Patient</span> <span class="nf">getPatient</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The trial for which this assay was done. An all-uppercase name.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return The all-uppercase trial name; never null</span>
+<span class="cm">     */</span>
+    <span class="n">String</span> <span class="nf">getTrialName</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The timepoint at which this assay was conducted. May be null.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the nullable assay timepoint</span>
+<span class="cm">     */</span>
+    <span class="n">Timepoint</span> <span class="nf">getTimepoint</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The sample type associated with this assay.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the sample used in this assay or null if not available</span>
+<span class="cm">     */</span>
+    <span class="n">SampleType</span> <span class="nf">getSampleType</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The tissue type associated with this assay.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the tisue type, if any; null otherwise</span>
+<span class="cm">     */</span>
+    <span class="n">TissueType</span> <span class="nf">getTissueType</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The platform for this assay. A platform defines metadata about the</span>
+<span class="cm">     * high-dimensional data. It can, for instance, refer to the commercial</span>
+<span class="cm">     * array used to analyse the sample.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the platform for this assay; never null</span>
+<span class="cm">     */</span>
+    <span class="n">Platform</span> <span class="nf">getPlatform</span><span class="o">()</span>
+
+<span class="o">}</span></div></div></div></div></body></html>

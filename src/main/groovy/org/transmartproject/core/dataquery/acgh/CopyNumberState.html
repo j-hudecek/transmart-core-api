@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="en"><head><title>src/main/groovy/org/transmartproject/core/dataquery/acgh/CopyNumberState</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../../../../../"><meta name="groc-document-path" content="src/main/groovy/org/transmartproject/core/dataquery/acgh/CopyNumberState"><meta name="groc-project-path" content="src/main/groovy/org/transmartproject/core/dataquery/acgh/CopyNumberState.groovy"><meta name="groc-github-url" content="https://github.com/thehyve/transmart-core-api"><link rel="stylesheet" type="text/css" media="all" href="../../../../../../../../assets/style.css"><script type="text/javascript" src="../../../../../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/thehyve/transmart-core-api/blob/master/src/main/groovy/org/transmartproject/core/dataquery/acgh/CopyNumberState.groovy">src/main/groovy/org/transmartproject/core/dataquery/acgh/CopyNumberState.groovy</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">transmartproject</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">dataquery</span><span class="o">.</span><span class="na">acgh</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * This enumeration represents the set of possible &quot;hard calls&quot; about copy</span>
+<span class="cm"> * number variations (loss, normal, gain and amplification) for a specific</span>
+<span class="cm"> * segment or region in copy number variation trials (e.g. an array comparative</span>
+<span class="cm"> * genomic hybridization trial).</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="n">CopyNumberState</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Indicates a &#39;loss&#39; hard call; a loss copy-number state for the segment or</span>
+<span class="cm">     * region</span>
+<span class="cm">     */</span>
+    <span class="n">LOSS</span>          <span class="o">(-</span><span class="mi">1</span><span class="o">),</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Indicates a &#39;normal&#39; hard call; a normal copy-number state for the</span>
+<span class="cm">     * segment or region</span>
+<span class="cm">     */</span>
+    <span class="n">NORMAL</span>        <span class="o">(</span><span class="mi">0</span><span class="o">),</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Indicates a &#39;gain&#39; hard call; a single gain copy-number state for the</span>
+<span class="cm">     * segment or region</span>
+<span class="cm">     */</span>
+    <span class="n">GAIN</span>          <span class="o">(</span><span class="mi">1</span><span class="o">),</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Indicates an &#39;amplification&#39; hard call; a multiple gain copy-number</span>
+<span class="cm">     * state for the segment or region</span>
+<span class="cm">     */</span>
+    <span class="n">AMPLIFICATION</span> <span class="o">(</span><span class="mi">2</span><span class="o">),</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Indicates invalid data. This can result from either a bug or corrupted</span>
+<span class="cm">     * data</span>
+<span class="cm">     */</span>
+    <span class="n">INVALID</span>       <span class="o">(</span><span class="mi">11</span><span class="o">)</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The integer value used to represent this state. There is an injection</span>
+<span class="cm">     * from the enumeration values to the integer domain.</span>
+<span class="cm">     */</span>
+    <span class="n">Integer</span> <span class="n">intValue</span>
+
+    <span class="kd">protected</span> <span class="nf">CopyNumberState</span><span class="o">(</span><span class="kt">int</span> <span class="n">intValue</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">intValue</span> <span class="o">=</span> <span class="n">intValue</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">CopyNumberState</span><span class="o">&gt;</span> <span class="n">ELEMENTS_SET</span>
+
+    <span class="kd">static</span> <span class="o">{</span>
+        <span class="n">ELEMENTS_SET</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">CopyNumberState</span><span class="o">&gt;(</span><span class="mi">5</span><span class="o">)</span>
+        <span class="n">values</span><span class="o">().</span><span class="na">each</span> <span class="o">{</span> <span class="n">CopyNumberState</span> <span class="n">it</span> <span class="o">-&gt;</span>
+            <span class="n">ELEMENTS_SET</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">intValue</span><span class="o">,</span> <span class="n">it</span><span class="o">)</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Returns the enumeration value mapped to the passed integer,</span>
+<span class="cm">     * or {@link CopyNumberState#INVALID} if there is none.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param i the integer mapped to the value we want</span>
+<span class="cm">     * @return the enumeration value</span>
+<span class="cm">     */</span>
+    <span class="kd">static</span> <span class="n">CopyNumberState</span> <span class="nf">forInteger</span><span class="o">(</span><span class="n">Integer</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">ELEMENTS_SET</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">?:</span> <span class="n">INVALID</span>
+    <span class="o">}</span>
+
+<span class="o">}</span></div></div></div></div></body></html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head><title>src/main/groovy/org/transmartproject/core/querytool/QueryResult</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../../../../"><meta name="groc-document-path" content="src/main/groovy/org/transmartproject/core/querytool/QueryResult"><meta name="groc-project-path" content="src/main/groovy/org/transmartproject/core/querytool/QueryResult.groovy"><meta name="groc-github-url" content="https://github.com/thehyve/transmart-core-api"><link rel="stylesheet" type="text/css" media="all" href="../../../../../../../assets/style.css"><script type="text/javascript" src="../../../../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/thehyve/transmart-core-api/blob/master/src/main/groovy/org/transmartproject/core/querytool/QueryResult.groovy">src/main/groovy/org/transmartproject/core/querytool/QueryResult.groovy</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">transmartproject</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">querytool</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * A query result instance contains information about a specific run of a</span>
+<span class="cm"> * query.</span>
+<span class="cm"> *</span>
+<span class="cm"> * At least for now, all query results are assumed to be of PATIENTSET type.</span>
+<span class="cm"> */</span>
+<span class="kd">interface</span> <span class="nc">QueryResult</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The query result instance id.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the numerical identifier for this result</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">Long</span> <span class="nf">getId</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The size of the set, or -1 if there was an error.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the size of the set</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">Long</span> <span class="nf">getSetSize</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The status of this query result instance.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the status or null if unknown</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">QueryStatus</span> <span class="nf">getStatus</span><span class="o">()</span> <span class="c1">//FINISHED (3), ERROR (4)</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The error message associated with this query result. May be an</span>
+<span class="cm">     * exception trace.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the error message or null if none</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getErrorMessage</span><span class="o">()</span>
+
+<span class="o">}</span></div></div></div></div></body></html>

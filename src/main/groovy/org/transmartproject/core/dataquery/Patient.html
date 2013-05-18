@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en"><head><title>src/main/groovy/org/transmartproject/core/dataquery/Patient</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../../../../"><meta name="groc-document-path" content="src/main/groovy/org/transmartproject/core/dataquery/Patient"><meta name="groc-project-path" content="src/main/groovy/org/transmartproject/core/dataquery/Patient.groovy"><meta name="groc-github-url" content="https://github.com/thehyve/transmart-core-api"><link rel="stylesheet" type="text/css" media="all" href="../../../../../../../assets/style.css"><script type="text/javascript" src="../../../../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/thehyve/transmart-core-api/blob/master/src/main/groovy/org/transmartproject/core/dataquery/Patient.groovy">src/main/groovy/org/transmartproject/core/dataquery/Patient.groovy</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">transmartproject</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">dataquery</span>
+
+<span class="kn">import</span> <span class="nn">org.transmartproject.core.dataquery.assay.Assay</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * A patient (or subject) is a individual for which we have clinical</span>
+<span class="cm"> * observations or other data.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Patient</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * A unique identifier for the patient. Cannot be null.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return object&#39;s numeric identifier</span>
+<span class="cm">     */</span>
+    <span class="n">Long</span> <span class="nf">getId</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The trial/study/experiment this patient belongs to.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the trial name (all uppercase) or null</span>
+<span class="cm">     */</span>
+    <span class="n">String</span> <span class="nf">getTrial</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The trial/study/experiment specific identifier for this patient. This</span>
+<span class="cm">     * is generally something vaguely more user-readable than the patient id.</span>
+<span class="cm">     * Can be null</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the trial-specific id or null</span>
+<span class="cm">     */</span>
+    <span class="n">String</span> <span class="nf">getInTrialId</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The assays/samples used to generate a row of high-dimensional data.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the assays associated with this patient; an empty list if none</span>
+<span class="cm">     */</span>
+    <span class="n">Set</span><span class="o">&lt;</span><span class="n">Assay</span><span class="o">&gt;</span> <span class="nf">getAssays</span><span class="o">()</span>
+
+<span class="o">}</span></div></div></div></div></body></html>

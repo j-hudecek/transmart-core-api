@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="en"><head><title>src/main/groovy/org/transmartproject/core/dataquery/DataQueryResource</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../../../../"><meta name="groc-document-path" content="src/main/groovy/org/transmartproject/core/dataquery/DataQueryResource"><meta name="groc-project-path" content="src/main/groovy/org/transmartproject/core/dataquery/DataQueryResource.groovy"><meta name="groc-github-url" content="https://github.com/thehyve/transmart-core-api"><link rel="stylesheet" type="text/css" media="all" href="../../../../../../../assets/style.css"><script type="text/javascript" src="../../../../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/thehyve/transmart-core-api/blob/master/src/main/groovy/org/transmartproject/core/dataquery/DataQueryResource.groovy">src/main/groovy/org/transmartproject/core/dataquery/DataQueryResource.groovy</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">transmartproject</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">dataquery</span>
+
+<span class="kn">import</span> <span class="nn">org.transmartproject.core.dataquery.constraints.ACGHRegionQuery</span>
+<span class="kn">import</span> <span class="nn">org.transmartproject.core.dataquery.acgh.RegionResult</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * A resource for querying about clinical and high-dimensional data.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">DataQueryResource</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Runs a query for aCHG region data. Optionally,  it can be run on a</span>
+<span class="cm">   * separate session; a stateless session may be useful here.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param spec the specification of the query</span>
+<span class="cm">     * @param session session where to run the query or null to use current</span>
+<span class="cm">     * @return the query result result</span>
+<span class="cm">     */</span>
+    <span class="n">RegionResult</span> <span class="nf">runACGHRegionQuery</span><span class="o">(</span><span class="n">ACGHRegionQuery</span> <span class="n">spec</span><span class="o">,</span> <span class="n">session</span><span class="o">)</span>
+<span class="o">}</span></div></div></div></div></body></html>
