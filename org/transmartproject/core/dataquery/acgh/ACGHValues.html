@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="en"><head><title>org/transmartproject/core/dataquery/acgh/ACGHValues</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../../"><meta name="groc-document-path" content="org/transmartproject/core/dataquery/acgh/ACGHValues"><meta name="groc-project-path" content="src/main/groovy/org/transmartproject/core/dataquery/acgh/ACGHValues.groovy"><meta name="groc-github-url" content="https://github.com/thehyve/transmart-core-api"><link rel="stylesheet" type="text/css" media="all" href="../../../../../assets/style.css"><script type="text/javascript" src="../../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/thehyve/transmart-core-api/blob/master/src/main/groovy/org/transmartproject/core/dataquery/acgh/ACGHValues.groovy">src/main/groovy/org/transmartproject/core/dataquery/acgh/ACGHValues.groovy</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">transmartproject</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">dataquery</span><span class="o">.</span><span class="na">acgh</span>
+<span class="cm">/**</span>
+<span class="cm"> * Aggregates certain values, both measured and calculated,</span>
+<span class="cm"> * for a certain (assay, probe or region) pair in the context of a certain</span>
+<span class="cm"> * array comparative genomic hybridization trial.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ACGHValues</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The log2 ratio value for the (assay, probe/region) pair represented in</span>
+<span class="cm">     * this value, for the trial at issue.</span>
+<span class="cm">     *</span>
+<span class="cm">     * For region stage values, this value is a central tendency of the</span>
+<span class="cm">     * probes aggregated by the region.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the log2 ratio value</span>
+<span class="cm">     */</span>
+    <span class="n">Double</span> <span class="nf">getChipCopyNumberValue</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The log2 ratio value for the (assay, segment) pair represented in</span>
+<span class="cm">     * this value, for the trial at issue.</span>
+<span class="cm">     *</span>
+<span class="cm">     * For a certain patient, this value will be identical in a segment for</span>
+<span class="cm">     * the set of contiguous probes that for the segment.</span>
+<span class="cm">     *</span>
+<span class="cm">     * For region stage values, this value is the result of a central tendency</span>
+<span class="cm">     * statistic.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the log2 ratio value</span>
+<span class="cm">     */</span>
+    <span class="n">Double</span> <span class="nf">getSegmentCopyNumberValue</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * A hard call on which type of copy number variation the underlying</span>
+<span class="cm">     * segment or region has experienced</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the copy number hard call</span>
+<span class="cm">     */</span>
+    <span class="n">CopyNumberState</span> <span class="nf">getCopyNumberState</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The probability (&quot;soft call&quot;) of this region or segment having</span>
+<span class="cm">     * suffered a copy number loss.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return probability of loss event</span>
+<span class="cm">     */</span>
+    <span class="n">Double</span> <span class="nf">getProbabilityOfLoss</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The probability (&quot;soft call&quot;) of this region or segment not</span>
+<span class="cm">     * having suffered any kind of copy number alteration.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return probability of normal event</span>
+<span class="cm">     */</span>
+    <span class="n">Double</span> <span class="nf">getProbabilityOfNormal</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The probability (&quot;soft call&quot;) that this region or segment has</span>
+<span class="cm">     * suffered a single copy-number gain.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return probability of gain event</span>
+<span class="cm">     */</span>
+    <span class="n">Double</span> <span class="nf">getProbabilityOfGain</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The probability (&quot;soft call&quot;) of that this region or segment having</span>
+<span class="cm">     * suffered multiple copy-number gains.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return probability of amplification event</span>
+<span class="cm">     */</span>
+    <span class="n">Double</span> <span class="nf">getProbabilityOfAmplification</span><span class="o">()</span>
+<span class="o">}</span></div></div></div></div></body></html>

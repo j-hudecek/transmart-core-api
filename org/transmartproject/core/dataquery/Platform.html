@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><title>org/transmartproject/core/dataquery/Platform</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../../../"><meta name="groc-document-path" content="org/transmartproject/core/dataquery/Platform"><meta name="groc-project-path" content="src/main/groovy/org/transmartproject/core/dataquery/Platform.groovy"><meta name="groc-github-url" content="https://github.com/thehyve/transmart-core-api"><link rel="stylesheet" type="text/css" media="all" href="../../../../assets/style.css"><script type="text/javascript" src="../../../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/thehyve/transmart-core-api/blob/master/src/main/groovy/org/transmartproject/core/dataquery/Platform.groovy">src/main/groovy/org/transmartproject/core/dataquery/Platform.groovy</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">transmartproject</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">dataquery</span>
+
+<span class="kn">import</span> <span class="nn">org.transmartproject.core.dataquery.acgh.Region</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * A platform record. A platform may be a platform proper (identifying an</span>
+<span class="cm"> * array or sequencer) or it may group together several{@link Region}s.</span>
+<span class="cm"> *</span>
+<span class="cm"> * Array based platforms will have an associated array template (data about</span>
+<span class="cm"> * its probes); region platforms will have an associated set of regions.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Platform</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * A string that uniquely identifies the platform.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the platform id</span>
+<span class="cm">     */</span>
+    <span class="n">String</span> <span class="nf">getId</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * A human-readable name for the platform.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return human-readable platform name.</span>
+<span class="cm">     */</span>
+    <span class="n">String</span> <span class="nf">getTitle</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The scientific name for the organism, like &#39;Homo Sapiens&#39;.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the organism associated with this platform</span>
+<span class="cm">     */</span>
+    <span class="n">String</span> <span class="nf">getOrganism</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * A genome build identifier.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return genome build identifier</span>
+<span class="cm">     */</span>
+    <span class="n">String</span> <span class="nf">getGenomeBuild</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * The time when this platform was imported to the database. Maybe.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the platform annotation date</span>
+<span class="cm">     */</span>
+    <span class="n">Date</span> <span class="nf">getAnnotationDate</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Indicates the type of platform or pseudo-platform,</span>
+<span class="cm">     * like {@link PlatformMarkerType#GENE_EXPRESSION} or</span>
+<span class="cm">     * {@link PlatformMarkerType#CHROMOSOMAL_REGION}.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the platform marker type</span>
+<span class="cm">     */</span>
+    <span class="n">PlatformMarkerType</span> <span class="nf">getMarkerType</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Returns an iterable with the platform template entries. The type of</span>
+<span class="cm">     * this entries depends on the marker type and is not constrained by this</span>
+<span class="cm">     * API.</span>
+<span class="cm">     *</span>
+<span class="cm">     * If the marker type does not have an associated template or it&#39;s of</span>
+<span class="cm">     * unknown type, then null is returned.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return the template entries for this platform or null</span>
+<span class="cm">     */</span>
+    <span class="n">Iterable</span><span class="o">&lt;?&gt;</span> <span class="n">getTemplate</span><span class="o">()</span>
+
+<span class="o">}</span></div></div></div></div></body></html>
