@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><title>index</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="index"><meta name="groc-project-path" content="README.md"><meta name="groc-github-url" content="https://github.com/thehyve/transmart-core-api"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/thehyve/transmart-core-api/blob/master/README.md">README.md</a></div></div><div id="document"><div class="segment"><div class="comments"><div class="wrapper"><p><strong>tranSMART Core API</strong> is a library with Groovy interfaces that define
 the interactions and calls between the various componements of <a href="http://transmartproject.org">tranSMART</a>.</p>
 
-<h1 id="clinical-data-api">Clinical data API</h1>
+<h1 id="clinical-data-api">Clinical Data API</h1>
 
 <h2 id="i2b2-based-query-tool">I2B2-based query tool</h2>
 
@@ -22,4 +22,17 @@ the ones which happen to be used in the legacy tranSMART codebase.</p>
 <p>A <a href="org/transmartproject/core/querytool/QueriesResource.html">QueriesResource</a>
 is defined which can be exposed by clinical data sources as a means of querying
 clinical data. This resource exposes methods to run queries and retrieve query results.
-The API is modelled after the <a href="https://www.i2b2.org/software/files/PDF/current/CRC_Messaging.pdf">i2b2 CRC query message API</a>.</p></div></div></div></div></body></html>
+The API is modelled after the <a href="https://www.i2b2.org/software/files/PDF/current/CRC_Messaging.pdf">i2b2 CRC query message API</a>.</p>
+
+<h1 id="high-dimensional-data-api">High Dimensional Data API</h1>
+
+<h2 id="high-dimensional-query-api">High Dimensional Query API</h2>
+
+<p>A <a href="org/transmartproject/core/dataquery/DataQueryResource.html">DataQueryResource</a>
+is defined which can be exposed by high dimensional data sources to allow querying of
+high dimensional data. A general <a href="org/transmartproject/core/dataquery/DataQueryResult.html">DataQueryResult</a>
+is defined which can be extended for specific data types. For now, all omics data types
+(inside specific packages) as well as possible queries are defined inside the core API project.
+To model general query constraints (e.g. on subjects or timepoints), a 
+<a href="org/transmartproject/core/dataquery/constraints/CommonHighDimensionalQueryConstraints.html">CommonHighDimensionalQueryConstraints</a>
+class is defined which can be embedded into specific constraint classes.</p></div></div></div></div></body></html>

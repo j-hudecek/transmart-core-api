@@ -24,7 +24,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "type": "heading",
           "data": {
             "level": 1,
-            "title": "Clinical data API",
+            "title": "Clinical Data API",
             "slug": "clinical-data-api"
           },
           "depth": 1,
@@ -58,251 +58,23 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               ]
             }
           ]
-        }
-      ]
-    }, {
-      "type": "folder",
-      "data": {
-        "path": "org",
-        "title": "org"
-      },
-      "depth": 1,
-      "children": [
-        {
-          "type": "folder",
+        }, {
+          "type": "heading",
           "data": {
-            "path": "org/transmartproject",
-            "title": "transmartproject"
+            "level": 1,
+            "title": "High Dimensional Data API",
+            "slug": "high-dimensional-data-api"
           },
-          "depth": 2,
+          "depth": 1,
           "children": [
             {
-              "type": "folder",
+              "type": "heading",
               "data": {
-                "path": "org/transmartproject/core",
-                "title": "core"
+                "level": 2,
+                "title": "High Dimensional Query API",
+                "slug": "high-dimensional-query-api"
               },
-              "depth": 3,
-              "children": [
-                {
-                  "type": "folder",
-                  "data": {
-                    "path": "org/transmartproject/core/exceptions",
-                    "title": "exceptions"
-                  },
-                  "depth": 4,
-                  "children": [
-                    {
-                      "type": "file",
-                      "data": {
-                        "language": {
-                          "nameMatchers": [".groovy"],
-                          "pygmentsLexer": "java",
-                          "singleLineComment": ["//"],
-                          "multiLineComment": ["/\\*", "*", "\\*/"],
-                          "name": "Groovy"
-                        },
-                        "sourcePath": "/projects/transmart-core-api/src/main/groovy/org/transmartproject/core/exceptions/InvalidRequestException.groovy",
-                        "projectPath": "src/main/groovy/org/transmartproject/core/exceptions/InvalidRequestException.groovy",
-                        "targetPath": "org/transmartproject/core/exceptions/InvalidRequestException",
-                        "title": "InvalidRequestException"
-                      },
-                      "depth": 5,
-                      "outline": []
-                    }, {
-                      "type": "file",
-                      "data": {
-                        "language": {
-                          "nameMatchers": [".groovy"],
-                          "pygmentsLexer": "java",
-                          "singleLineComment": ["//"],
-                          "multiLineComment": ["/\\*", "*", "\\*/"],
-                          "name": "Groovy"
-                        },
-                        "sourcePath": "/projects/transmart-core-api/src/main/groovy/org/transmartproject/core/exceptions/NoSuchResourceException.groovy",
-                        "projectPath": "src/main/groovy/org/transmartproject/core/exceptions/NoSuchResourceException.groovy",
-                        "targetPath": "org/transmartproject/core/exceptions/NoSuchResourceException",
-                        "title": "NoSuchResourceException"
-                      },
-                      "depth": 5,
-                      "outline": []
-                    }
-                  ]
-                }, {
-                  "type": "folder",
-                  "data": {
-                    "path": "org/transmartproject/core/ontology",
-                    "title": "ontology"
-                  },
-                  "depth": 4,
-                  "children": [
-                    {
-                      "type": "file",
-                      "data": {
-                        "language": {
-                          "nameMatchers": [".groovy"],
-                          "pygmentsLexer": "java",
-                          "singleLineComment": ["//"],
-                          "multiLineComment": ["/\\*", "*", "\\*/"],
-                          "name": "Groovy"
-                        },
-                        "sourcePath": "/projects/transmart-core-api/src/main/groovy/org/transmartproject/core/ontology/ConceptsResource.groovy",
-                        "projectPath": "src/main/groovy/org/transmartproject/core/ontology/ConceptsResource.groovy",
-                        "targetPath": "org/transmartproject/core/ontology/ConceptsResource",
-                        "title": "ConceptsResource"
-                      },
-                      "depth": 5,
-                      "outline": []
-                    }, {
-                      "type": "file",
-                      "data": {
-                        "language": {
-                          "nameMatchers": [".groovy"],
-                          "pygmentsLexer": "java",
-                          "singleLineComment": ["//"],
-                          "multiLineComment": ["/\\*", "*", "\\*/"],
-                          "name": "Groovy"
-                        },
-                        "sourcePath": "/projects/transmart-core-api/src/main/groovy/org/transmartproject/core/ontology/OntologyTerm.groovy",
-                        "projectPath": "src/main/groovy/org/transmartproject/core/ontology/OntologyTerm.groovy",
-                        "targetPath": "org/transmartproject/core/ontology/OntologyTerm",
-                        "title": "OntologyTerm"
-                      },
-                      "depth": 5,
-                      "outline": []
-                    }
-                  ]
-                }, {
-                  "type": "folder",
-                  "data": {
-                    "path": "org/transmartproject/core/querytool",
-                    "title": "querytool"
-                  },
-                  "depth": 4,
-                  "children": [
-                    {
-                      "type": "file",
-                      "data": {
-                        "language": {
-                          "nameMatchers": [".groovy"],
-                          "pygmentsLexer": "java",
-                          "singleLineComment": ["//"],
-                          "multiLineComment": ["/\\*", "*", "\\*/"],
-                          "name": "Groovy"
-                        },
-                        "sourcePath": "/projects/transmart-core-api/src/main/groovy/org/transmartproject/core/querytool/ConstraintByValue.groovy",
-                        "projectPath": "src/main/groovy/org/transmartproject/core/querytool/ConstraintByValue.groovy",
-                        "targetPath": "org/transmartproject/core/querytool/ConstraintByValue",
-                        "title": "ConstraintByValue"
-                      },
-                      "depth": 5,
-                      "outline": []
-                    }, {
-                      "type": "file",
-                      "data": {
-                        "language": {
-                          "nameMatchers": [".groovy"],
-                          "pygmentsLexer": "java",
-                          "singleLineComment": ["//"],
-                          "multiLineComment": ["/\\*", "*", "\\*/"],
-                          "name": "Groovy"
-                        },
-                        "sourcePath": "/projects/transmart-core-api/src/main/groovy/org/transmartproject/core/querytool/Item.groovy",
-                        "projectPath": "src/main/groovy/org/transmartproject/core/querytool/Item.groovy",
-                        "targetPath": "org/transmartproject/core/querytool/Item",
-                        "title": "Item"
-                      },
-                      "depth": 5,
-                      "outline": []
-                    }, {
-                      "type": "file",
-                      "data": {
-                        "language": {
-                          "nameMatchers": [".groovy"],
-                          "pygmentsLexer": "java",
-                          "singleLineComment": ["//"],
-                          "multiLineComment": ["/\\*", "*", "\\*/"],
-                          "name": "Groovy"
-                        },
-                        "sourcePath": "/projects/transmart-core-api/src/main/groovy/org/transmartproject/core/querytool/Panel.groovy",
-                        "projectPath": "src/main/groovy/org/transmartproject/core/querytool/Panel.groovy",
-                        "targetPath": "org/transmartproject/core/querytool/Panel",
-                        "title": "Panel"
-                      },
-                      "depth": 5,
-                      "outline": []
-                    }, {
-                      "type": "file",
-                      "data": {
-                        "language": {
-                          "nameMatchers": [".groovy"],
-                          "pygmentsLexer": "java",
-                          "singleLineComment": ["//"],
-                          "multiLineComment": ["/\\*", "*", "\\*/"],
-                          "name": "Groovy"
-                        },
-                        "sourcePath": "/projects/transmart-core-api/src/main/groovy/org/transmartproject/core/querytool/QueriesResource.groovy",
-                        "projectPath": "src/main/groovy/org/transmartproject/core/querytool/QueriesResource.groovy",
-                        "targetPath": "org/transmartproject/core/querytool/QueriesResource",
-                        "title": "QueriesResource"
-                      },
-                      "depth": 5,
-                      "outline": []
-                    }, {
-                      "type": "file",
-                      "data": {
-                        "language": {
-                          "nameMatchers": [".groovy"],
-                          "pygmentsLexer": "java",
-                          "singleLineComment": ["//"],
-                          "multiLineComment": ["/\\*", "*", "\\*/"],
-                          "name": "Groovy"
-                        },
-                        "sourcePath": "/projects/transmart-core-api/src/main/groovy/org/transmartproject/core/querytool/QueryDefinition.groovy",
-                        "projectPath": "src/main/groovy/org/transmartproject/core/querytool/QueryDefinition.groovy",
-                        "targetPath": "org/transmartproject/core/querytool/QueryDefinition",
-                        "title": "QueryDefinition"
-                      },
-                      "depth": 5,
-                      "outline": []
-                    }, {
-                      "type": "file",
-                      "data": {
-                        "language": {
-                          "nameMatchers": [".groovy"],
-                          "pygmentsLexer": "java",
-                          "singleLineComment": ["//"],
-                          "multiLineComment": ["/\\*", "*", "\\*/"],
-                          "name": "Groovy"
-                        },
-                        "sourcePath": "/projects/transmart-core-api/src/main/groovy/org/transmartproject/core/querytool/QueryResult.groovy",
-                        "projectPath": "src/main/groovy/org/transmartproject/core/querytool/QueryResult.groovy",
-                        "targetPath": "org/transmartproject/core/querytool/QueryResult",
-                        "title": "QueryResult"
-                      },
-                      "depth": 5,
-                      "outline": []
-                    }, {
-                      "type": "file",
-                      "data": {
-                        "language": {
-                          "nameMatchers": [".groovy"],
-                          "pygmentsLexer": "java",
-                          "singleLineComment": ["//"],
-                          "multiLineComment": ["/\\*", "*", "\\*/"],
-                          "name": "Groovy"
-                        },
-                        "sourcePath": "/projects/transmart-core-api/src/main/groovy/org/transmartproject/core/querytool/QueryStatus.groovy",
-                        "projectPath": "src/main/groovy/org/transmartproject/core/querytool/QueryStatus.groovy",
-                        "targetPath": "org/transmartproject/core/querytool/QueryStatus",
-                        "title": "QueryStatus"
-                      },
-                      "depth": 5,
-                      "outline": []
-                    }
-                  ]
-                }
-              ]
+              "depth": 2
             }
           ]
         }
