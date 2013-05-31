@@ -17,11 +17,11 @@ interface Assay {
     Long getId()
 
     /**
-     * The patient from whom a sample was extracted for this assay.
+     * The sample(s) on which this assay was performed.
      *
      * @return the patient for this assay; never null
      */
-    Patient getPatient()
+    Collection<Sample> getSamples()
 
     /**
      * The trial for which this assay was done. An all-uppercase name.
@@ -29,27 +29,6 @@ interface Assay {
      * @return The all-uppercase trial name; never null
      */
     String getTrialName()
-
-    /**
-     * The timepoint at which this assay was conducted. May be null.
-     *
-     * @return the nullable assay timepoint
-     */
-    Timepoint getTimepoint()
-
-    /**
-     * The sample type associated with this assay.
-     *
-     * @return the sample used in this assay or null if not available
-     */
-    SampleType getSampleType()
-
-    /**
-     * The tissue type associated with this assay.
-     *
-     * @return the tisue type, if any; null otherwise
-     */
-    TissueType getTissueType()
 
     /**
      * The platform for this assay. A platform defines metadata about the
