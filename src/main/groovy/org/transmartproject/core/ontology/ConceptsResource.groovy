@@ -24,4 +24,11 @@ interface ConceptsResource {
      * @throws NoSuchResourceException
      */
     OntologyTerm getByKey(String conceptKey) throws NoSuchResourceException
+
+    /**
+     * Returns all concepts that are marked as a study.
+     *
+     * @return the list of concept studies
+     */
+    List<OntologyTerm> getAllStudies()
 }
