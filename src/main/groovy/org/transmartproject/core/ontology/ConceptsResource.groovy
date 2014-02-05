@@ -45,4 +45,9 @@ interface ConceptsResource {
      * @return the list of patients for a given study
      */
     List<PatientDimension> getSubjectsForStudy(I2b2 study)
+
+    /**
+     * Return the single study object for a given id
+     */
+    PatientDimension getSubjectForStudy(Integer subjectId) {
 }
