@@ -31,4 +31,18 @@ interface ConceptsResource {
      * @return the list of concept studies
      */
     List<OntologyTerm> getAllStudies()
+
+    /**
+     * Returns a single concept for the given id.
+     *
+     * @return the concept study
+     */
+    OntologyTerm getStudy(String studyId)
+
+    /**
+     * Returns all patient dimension objects (patients/subjects).
+     *
+     * @return the list of patients for a given study
+     */
+    List<PatientDimension> getSubjectsForStudy(I2b2 study)
 }
